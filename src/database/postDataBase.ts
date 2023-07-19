@@ -58,14 +58,16 @@ export class PostDatabase extends BaseDatabase{
         return postDB
     }
 
-    public getCommentById = async (id: string):Promise<CommentDB | undefined>=>{
-        const [commentDB]:CommentDB[] | undefined = await BaseDatabase
-        .connection(PostDatabase.COMMENTS_TABLE)
-        .select().where({id:id})
-
-        return commentDB
-    }
-
+    public getCommentById = async (id: string): Promise<CommentDB | undefined> => {
+        const [commentDB]: CommentDB[] | undefined = await BaseDatabase
+          .connection(PostDatabase.COMMENTS_TABLE)
+          .select()
+          .where({ id: id })
+          .limit(1);
+      
+        return commentDB;
+      }
+      
     public getCommentsById = async(id:string):Promise<PostDB[] | undefined>=>{
         const commentDB:PostDB[] | undefined = await BaseDatabase
         .connection(PostDatabase.COMMENTS_TABLE)

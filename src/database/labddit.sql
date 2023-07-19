@@ -1,3 +1,4 @@
+-- Active: 1689739757498@@127.0.0.1@3306
 CREATE TABLE users (
   id TEXT PRIMARY KEY UNIQUE NOT NULL,
   name TEXT NOT NULL,
@@ -31,6 +32,7 @@ CREATE TABLE comments_posts (
   id TEXT PRIMARY KEY UNIQUE NOT NULL,
   creator_id TEXT NOT NULL,
   content TEXT,
+  comments INTEGER DEFAULT(0) NOT NULL,
   likes INTEGER DEFAULT(0) NOT NULL,
   dislikes INTEGER DEFAULT(0) NOT NULL,
   created_at TEXT DEFAULT(DATETIME()) NOT NULL,
@@ -39,6 +41,7 @@ CREATE TABLE comments_posts (
   FOREIGN KEY (creator_id) REFERENCES users (id) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (post_id) REFERENCES posts (id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
 
 CREATE TABLE likes_dislikes_comments (
   user_id TEXT NOT NULL,
@@ -70,6 +73,13 @@ VALUES
   ("c001", "a02", "Que festa linda", "p01"),
   ("c002", "a01", "Sua esposa é muito linda", "p05"),
   ("c003", "a05", "AEW só quem trabalha!", "p02");
+
+INSERT INTO comments_posts (id, creator_id, content, likes, dislikes, created_at, updated_at, post_id)
+VALUES
+  ("c001", "a02", "Que festa linda", 10, 2, DATETIME('now'), DATETIME('now'), "p01"),
+  ("c002", "a01", "Sua esposa é muito linda", 5, 1, DATETIME('now'), DATETIME('now'), "p05"),
+  ("c003", "a05", "AEW só quem trabalha!", 8, 3, DATETIME('now'), DATETIME('now'), "p02");
+
 
 INSERT INTO likes_dislikes (user_id, post_id, like)
 VALUES

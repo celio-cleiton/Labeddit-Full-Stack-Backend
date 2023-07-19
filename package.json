@@ -12,15 +12,15 @@
 
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/celio-cleiton/projeto-labook-backend.git"
+    "url": "git+https://github.com/celio-cleiton/Labeddit-Full-Stack-Backend.git"
   },
   "keywords": [],
   "author": "Cleiton",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/celio-cleiton/projeto-labook-backend/issues"
+    "url": "https://github.com/celio-cleiton/Labeddit-Full-Stack-Backend/issues"
   },
-  "homepage": "https://github.com/celio-cleiton/projeto-labook-backend#readme",
+  "homepage": "https://github.com/celio-cleiton/Labeddit-Full-Stack-Backend#readme",
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/cors": "^2.8.13",
