@@ -3,8 +3,10 @@
 Projeto FullStack Labbedit - Rede Social
 
 Autor: Célio Cleiton Do Vale Rodrigues
-Repositório Front-end: [link]
-Repositório Back-end: [link]
+Repositório Front-end: [link](https://cleiton-projeto-labeddit.surge.sh/)
+Repositório Back-end: [link aqui](https://apilabeddit-6l24.onrender.com)
+
+Documentação do Postman: [clique aqui!](https://documenter.getpostman.com/view/24823231/2s946h7rTT)
 
 ## Tecnologias Utilizadas
 
